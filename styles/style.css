@@ -54,7 +54,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  inline-size: max-content; 
+  inline-size: max-content;
   block-size: 26px;
   color: var(--accent-color);
   text-transform: uppercase;
@@ -149,7 +149,7 @@
 .content-section__title {
   font-size: 18px;
   font-weight: bold;
-  color: var(--accent-color); 
+  color: var(--accent-color);
 }
 
 .cards-list {
@@ -215,11 +215,21 @@
   display: block;
 }
 
-.gallery__image_type_sunset { grid-area: sunset; }
-.gallery__image_type_ice-cream { grid-area: ice-cream; }
-.gallery__image_type_tape { grid-area: tape; }
-.gallery__image_type_books { grid-area: books; }
-.gallery__image_type_street { grid-area: street; }
+.gallery__image_type_sunset {
+  grid-area: sunset;
+}
+.gallery__image_type_ice-cream {
+  grid-area: ice-cream;
+}
+.gallery__image_type_tape {
+  grid-area: tape;
+}
+.gallery__image_type_books {
+  grid-area: books;
+}
+.gallery__image_type_street {
+  grid-area: street;
+}
 
 .footer {
   block-size: 100vh;
@@ -315,21 +325,21 @@
   }
 
   .content-section {
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
 
   .content-section__title {
-    grid-column: 1 / 2; 
+    grid-column: 1 / 2;
   }
 
   .cards-list {
-    grid-column: 2 / -1; 
-    grid-template-columns: 1fr; 
+    grid-column: 2 / -1;
+    grid-template-columns: 1fr;
   }
 
   .content-section_type_gadgets .content-section__title {
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
   }
 
   .content-section_type_gadgets .cards-list {
