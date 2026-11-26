@@ -168,7 +168,7 @@
 
 .card__title {
   font-size: 18px;
-  height: 24px;
+  min-height: 24px;
 }
 
 .card__text {
@@ -288,12 +288,15 @@
 
   .content-section_type_gadgets .content-section__title {
     grid-column: 1 / -1; 
+    grid-row: 1;
+    max-inline-size: 216px;
   }
 
   .content-section_type_gadgets .cards-list {
     grid-column: 1 / -1; 
+    grid-row: 2; 
     display: grid;
-    grid-template-columns: 1fr; /* Карточки на всю ширину (по 728px) */
+    grid-template-columns: 1fr; 
     gap: 20px;
   }
 
@@ -343,12 +346,15 @@
 
   .content-section_type_gadgets .content-section__title {
     grid-column: 1 / -1; 
+    grid-row: 1;
+    max-inline-size: 315px; /* Ограничиваем ширину как у левой колонки на десктопе */
   }
 
   .content-section_type_gadgets .cards-list {
     grid-column: 1 / -1; 
+    grid-row: 2; 
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Делим общую ширину на 3 равные колонки (по ~315px) */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
   }
 }
