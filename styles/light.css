@@ -4,7 +4,6 @@
   --text-color: #353430;
   --accent-color: #ff8dcb;
   --title-color: #ffc2e6;
-  --title-shadow: #ff8dcb;
   --title-text-color: #353430;
   
   --button-text-color: var(--text-color);
@@ -20,7 +19,6 @@
     --text-color: #353430;
     --accent-color: #ff8dcb;
     --title-color: #ffc2e6;
-    --title-shadow: #ff8dcb;
     --title-text-color: #353430;
     
     --button-text-color: var(--text-color);
