@@ -14,7 +14,7 @@
   color: var(--title-text-color);
 }
 
-/* ИСПРАВЛЕНИЕ: Уголки теперь цвета текста (черные в светлой теме) */
+/* Уголки цвета текста */
 .decorated-zone {
   position: relative;
 }
@@ -41,15 +41,15 @@
   border-left: 1px solid var(--text-color);
 }
 
-/* Шапка: делаем flex для идеального центрирования заголовка */
+/* --- HEADER --- */
 .header {
   height: 100vh;
   min-height: 668px;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Центрируем no focus по вертикали */
-  position: relative; /* Чтобы позиционировать плашку и меню */
+  justify-content: center;
+  position: relative;
 }
 
 .header__rec {
@@ -114,17 +114,17 @@
   border-bottom: 1px solid var(--button-text-color);
 }
 
-/* Заголовок no focus */
+/* ИСПРАВЛЕНИЕ: line-height 0.83 для мобилки */
 .header__title {
   margin: 0;
   color: var(--title-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0 var(--accent-color);
-  line-height: 1;
+  line-height: 0.83; 
   z-index: 1;
 }
 
-/* Розовая плашка: точные размеры для мобилки (10px по краям, 66px снизу) */
+/* ИСПРАВЛЕНИЕ: точная плашка 355px, снизу 66px */
 .header__text {
   position: absolute;
   bottom: 66px;
@@ -132,12 +132,12 @@
   right: 10px;
   margin: 0;
   font-weight: bold;
-  text-align: left;
+  font-size: 18px;
 }
 
-/* Основной контент: отступ сверху 40px для мобилки */
+/* ИСПРАВЛЕНИЕ: padding 40px снизу для мобилки */
 .main {
-  padding: 40px 10px; 
+  padding: 40px 10px 40px; 
 }
 
 .content-section {
@@ -147,7 +147,6 @@
   margin-block-end: 50px;
 }
 
-/* ИСПРАВЛЕНИЕ: Заголовки h2 теперь цвета текста */
 .content-section__title {
   font-size: 18px;
   font-weight: bold;
@@ -172,8 +171,10 @@
 }
 
 .card__text {
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.3;
-  max-inline-size: 100%; /* Убрали любые ограничения ширины текста */
+  max-inline-size: 100%; /* Никаких ограничений ширины */
 }
 
 .card__text a {
@@ -190,8 +191,9 @@
   outline-offset: 2px;
 }
 
+/* ИСПРАВЛЕНИЕ: убрали margin-end, чтобы работал padding-bottom у .main */
 .gallery {
-  margin-block-end: 50px;
+  margin-block-end: 0;
 }
 
 .gallery__title {
@@ -201,7 +203,7 @@
 
 .gallery__grid {
   display: grid;
-  gap: 10px; /* ИСПРАВЛЕНИЕ: 10px для мобилки */
+  gap: 10px; 
   grid-template-areas:
     "sunset"
     "ice-cream"
@@ -223,6 +225,7 @@
 .gallery__image_type_books { grid-area: books; }
 .gallery__image_type_street { grid-area: street; }
 
+/* --- FOOTER --- */
 .footer {
   height: 100vh;
   min-height: 668px;
@@ -239,14 +242,16 @@
   line-height: 1;
 }
 
+/* --- ПЛАНШЕТ (768px) --- */
 @media (min-width: 768px) {
   .header, .footer {
     min-height: 1024px;
     padding: 20px;
   }
 
+  /* ИСПРАВЛЕНИЕ: padding 60px снизу */
   .main {
-    padding: 60px 20px; /* ИСПРАВЛЕНИЕ: 60px отступ для планшета */
+    padding: 60px 20px 60px; 
   }
 
   .header__theme-menu {
@@ -254,12 +259,14 @@
     right: 20px;
   }
 
+  /* ИСПРАВЛЕНИЕ: line-height 1 для больших экранов */
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-left: -20px; /* Сдвиг влево по макету */
+    line-height: 1;
+    margin-left: -20px; 
   }
 
-  /* ИСПРАВЛЕНИЕ: Плашка 364px, снизу 183px */
+  /* ИСПРАВЛЕНИЕ: плашка 364px, снизу 183px */
   .header__text {
     bottom: 183px;
     left: auto;
@@ -267,10 +274,10 @@
     width: 364px;
   }
 
-  /* ИСПРАВЛЕНИЕ: Сетка для секций, чтобы текст стал шире */
+  /* ИСПРАВЛЕНИЕ: сетка 1fr 1fr, чтобы текст стал широким */
   .content-section {
     display: grid;
-    grid-template-columns: 1fr 2.5fr; /* Заголовок уже, карточки шире */
+    grid-template-columns: 1fr 1fr; 
     gap: 20px;
   }
 
@@ -294,7 +301,7 @@
   }
 
   .gallery__grid {
-    gap: 20px; /* Возвращаем 20px для планшета/десктопа */
+    gap: 20px; 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-template-areas:
@@ -308,7 +315,13 @@
   }
 }
 
+/* --- ДЕСКТОП (1024px) --- */
 @media (min-width: 1024px) {
+  /* ИСПРАВЛЕНИЕ: высота 768px для десктопа, чтобы не было лишних 200px */
+  .header, .footer {
+    min-height: 768px;
+  }
+
   .header__theme-menu {
     top: 20px;
     right: auto;
@@ -321,16 +334,11 @@
     align-items: center;
   }
 
-  /* ИСПРАВЛЕНИЕ: Плашка 491px, снизу 134px */
+  /* ИСПРАВЛЕНИЕ: плашка 491px, снизу 134px */
   .header__text {
     bottom: 134px;
     right: 20px;
     width: 491px;
-  }
-
-  /* Делаем колонку с карточками еще шире на десктопе */
-  .content-section {
-    grid-template-columns: 1fr 3fr; 
   }
 
   .content-section_type_gadgets .cards-list {
