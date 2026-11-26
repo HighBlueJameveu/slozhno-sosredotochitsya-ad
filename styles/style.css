@@ -131,7 +131,7 @@
   font-weight: bold;
 }
 .main {
-  padding: 40px 20px; 
+  padding: 40px 20px;
 }
 
 .content-section {
@@ -145,7 +145,7 @@
 .content-section__title {
   font-size: 18px;
   font-weight: bold;
-  color: var(--accent-color); 
+  color: var(--accent-color);
 }
 
 .cards-list {
