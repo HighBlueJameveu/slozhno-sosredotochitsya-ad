@@ -151,6 +151,7 @@
   font-size: 18px;
   font-weight: bold;
   color: var(--text-color); 
+  line-height: 23px;
 }
 
 .cards-list {
@@ -168,6 +169,8 @@
 
 .card__title {
   font-size: 18px;
+  min-height: 24px;
+  line-height: 23.5px;
   min-height: 24px;
 }
 
@@ -200,6 +203,7 @@
 .gallery__title {
   font-size: 18px;
   margin-block-end: 10px;
+  line-height: 23px;
 }
 
 .gallery__grid {
